@@ -94,6 +94,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-dU-cEh">
                                 <rect key="frame" x="283" y="418" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onTappedSaveButton:" destination="rqb-0z-3km" eventType="touchUpInside" id="JLO-vc-kVB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,6 +108,12 @@
                             <constraint firstItem="1mi-du-UZw" firstAttribute="centerX" secondItem="HHZ-w8-bzH" secondAttribute="centerX" id="ORy-du-1Op"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collegeTextField" destination="vEz-Uj-ExT" id="dlR-uI-hgs"/>
+                        <outlet property="imageView" destination="1mi-du-UZw" id="dSG-DB-YI1"/>
+                        <outlet property="locationTextField" destination="peD-xl-N1f" id="bTb-OS-rIu"/>
+                        <outlet property="numberOfStudentsTextField" destination="TPf-AW-DMM" id="uMm-sU-SL6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6L-Ku-bnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

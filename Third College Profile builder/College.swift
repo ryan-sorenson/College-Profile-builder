@@ -17,7 +17,7 @@ class College: NSObject {
     convenience init(name: String, location: String, numberOfStudents: Int, image: UIImage) {
         self.init()
         self.name = name
-        self.location
+        self.location = location
         self.numberOfStudents = numberOfStudents
         self.image = image
     }

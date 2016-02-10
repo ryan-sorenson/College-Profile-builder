@@ -15,8 +15,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var college: College!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

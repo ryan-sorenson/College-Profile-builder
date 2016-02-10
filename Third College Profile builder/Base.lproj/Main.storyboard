@@ -49,8 +49,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="25l-fs-ygt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="6LU-8d-0WT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Tp-gq-59D"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="6LU-8d-0WT">
+                            <connections>
+                                <action selector="onTappedEditButton:" destination="BYZ-38-t0r" id="YjY-Xa-zex"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Tp-gq-59D">
+                            <connections>
+                                <action selector="onTappedPlusButton:" destination="BYZ-38-t0r" id="TK0-my-DJy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editButton" destination="6LU-8d-0WT" id="hwx-db-kE7"/>
@@ -81,7 +89,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPf-AW-DMM">
                                 <rect key="frame" x="252" y="164" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peD-xl-N1f">
                                 <rect key="frame" x="252" y="212" width="97" height="30"/>

@@ -29,6 +29,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rqb-0z-3km" kind="show" id="lWg-HB-MdM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -45,8 +48,12 @@
                             <constraint firstItem="7FO-B5-gdK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="GkD-IG-W3d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="25l-fs-ygt"/>
+                    <navigationItem key="navigationItem" id="25l-fs-ygt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="6LU-8d-0WT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Tp-gq-59D"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="6LU-8d-0WT" id="hwx-db-kE7"/>
                         <outlet property="tableView" destination="7FO-B5-gdK" id="8Z9-Pk-KxJ"/>
                     </connections>
                 </viewController>

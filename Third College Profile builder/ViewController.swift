@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var colleges = ["Augustana", "Illinois", "Wisconson"]
+    var colleges = [
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
     }
 }
 

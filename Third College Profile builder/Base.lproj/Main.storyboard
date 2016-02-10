@@ -54,6 +54,24 @@
             </objects>
             <point key="canvasLocation" x="1055" y="-358"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="WjI-CF-74U">
+            <objects>
+                <viewController id="rqb-0z-3km" customClass="DetailViewController" customModule="Third_College_Profile_builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fEV-6N-gYO"/>
+                        <viewControllerLayoutGuide type="bottom" id="wwt-uu-15V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HHZ-w8-bzH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6L-Ku-bnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747" y="-358"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pdZ-Yh-Tto">
             <objects>

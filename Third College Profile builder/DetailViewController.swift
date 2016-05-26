@@ -30,11 +30,11 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
         urlTextField.text = String(college.url!)
         imagePicker.delegate = self
     }
+
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true) { () -> Void in
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.imageView.image = selectedImage
-
         }
     }
     
@@ -45,6 +45,7 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
         college.url = NSURL(string: urlTextField.text!)
         college.image = imageView.image
     }
+    
     
     @IBAction func onTappedGoButton(sender: AnyObject) {
         let svc = SFSafariViewController(URL: college.url!)
@@ -66,4 +67,10 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
     @IBAction func onScreenTapped(sender: AnyObject) {
         urlTextField.resignFirstResponder()
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! MapViewController
+        dvc.map = college.name
+    }
 }
+
+

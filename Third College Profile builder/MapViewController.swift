@@ -8,61 +8,46 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
-class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
-    let locationManager = CLLocationManager()
-
+class MapViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var mapView: MKMapView!
-    var college : College!
-    var colleges : [College] = []
-    
+   
     var map = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         textView.delegate = self
-
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        for location in locations {
-            if location.horizontalAccuracy < 1000 &&
-                location.verticalAccuracy < 1000 {
-                    let center = location.coordinate
-                    let span = MKCoordinateSpanMake(0.01, 0.01)
-                    let region = MKCoordinateRegionMake(center, span)
-                    self.mapView.setRegion(region, animated: true)
-                    locationManager.startUpdatingLocation()
-            }
-        }
+        textView.text = map
+        findLocation(map)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        let locationName = textField.text!
-        textField.resignFirstResponder()
+        let locationName = textView.text!
+        textView.resignFirstResponder()
         findLocation(locationName)
         return true
     }
+    
     func findLocation(locationName: String){
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(locationName) { (placemarks, error) -> Void in
             if error != nil{
                 print(error)
-                
             }
-            else{
-                if placemarks!.count > 1{
+            else {
+                if placemarks!.count > 1 {
                     let alert = UIAlertController(title: "Select Location", message: nil, preferredStyle: .ActionSheet)
-                    for placemark in placemarks!
-                    {
+                    for placemark in placemarks! {
                         let locationAction = UIAlertAction(title: placemark.name!, style: .Default, handler: { (action) -> Void in
                             self.displayMap(placemark)
                         })
+                        alert.addAction(locationAction)
                     }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    alert.addAction(cancelAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
                 else if placemarks?.count == 1 {
                     let placemark = placemarks!.first! as CLPlacemark
@@ -75,10 +60,10 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     func displayMap(placemark: CLPlacemark){
         textView.text = placemark.name
         let center = placemark.location!.coordinate
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegionMake(center, span)
         let pin = MKPointAnnotation()
-        pin.coordinate = center
+        pin.coordinate = center;
         pin.title = placemark.name
         mapView.addAnnotation(pin)
         mapView.setRegion(region, animated: true)

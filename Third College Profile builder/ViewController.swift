@@ -19,8 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         editButton.tag = 0
         
         colleges.append(College(url: NSURL(string: "http://illinois.edu")!, map: "University of Illinois, IL", name: "University of Illinois", location: "Urbana-Champaign, IL", numberOfStudents: 45000, image: UIImage(named: "illinois")!))
-        colleges.append(College(url: NSURL(string: "http://www.augustana.edu")!, map: "Augustana University, Rock Island", name: "Augustana", location: "Rock Island, IL", numberOfStudents: 12000, image: UIImage(named: "Augustanaa")!))
-        colleges.append(College(url: NSURL(string: "http://marquette.edu")!, map: "Marquette University, WI", name: "Marquette", location: "Milwaukee, WI", numberOfStudents: 24000, image: UIImage(named: "marquette")!))
+        colleges.append(College(url: NSURL(string: "http://www.augustana.edu")!, map: "Augustana College, Rock Island", name: "Augustana College", location: "Rock Island, IL", numberOfStudents: 12000, image: UIImage(named: "Augustanaa")!))
+        colleges.append(College(url: NSURL(string: "http://marquette.edu")!, map: "Marquette University, WI", name: "Marquette University", location: "Milwaukee, WI", numberOfStudents: 24000, image: UIImage(named: "marquette")!))
     }
     
     override func viewWillAppear(animated: Bool){

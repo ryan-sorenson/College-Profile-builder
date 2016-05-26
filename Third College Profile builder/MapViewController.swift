@@ -59,7 +59,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         let center = placemark.location!.coordinate
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(center, span)
-        let pin = MKPointAnnotation
+        let pin = MKPointAnnotation()
         pin.coordinate = center
         pin.title = placemark.name
         mapView.addAnnotation(pin)

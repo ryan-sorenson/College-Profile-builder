@@ -7,27 +7,31 @@
 //
 
 import UIKit
+import SafariServices
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var colleges : [College] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
         
-        colleges.append(College(name: "Illinois", location: "Urbana-Champaign", numberOfStudents: 40000, image: UIImage(named: "illinois")!))
-        colleges.append(College(name: "Augustana", location: "Rock Island", numberOfStudents: 2313, image: UIImage(named: "augustana")!))
-        colleges.append(College(name: "Marquette", location: "Milwauke", numberOfStudents: 213232, image: UIImage(named: "marquette")!))
-        
-        
-       
+        colleges.append(College(url: NSURL(string: "http://illinois.edu")!, name: "University of Illinois", location: "Urbana-Champaign, IL", numberOfStudents: 45000, image: UIImage(named: "illinois")!))
+        colleges.append(College(url: NSURL(string: "http://www.augustana.edu")!, name: "Augustana", location: "Rock Island, IL", numberOfStudents: 12000, image: UIImage(named: "Augustanaa")!))
+        colleges.append(College(url: NSURL(string: "http://marquette.edu")!, name: "Marquette", location: "Milwaukee, WI", numberOfStudents: 25000, image: UIImage(named: "marquette")!))
     }
+    
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colleges.count
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         cell.textLabel?.text = colleges[indexPath.row].name
@@ -40,6 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
+    
     @IBAction func onTappedPlusButton(sender: AnyObject) {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -68,14 +73,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             sender.tag = 0
         }
     }
+    
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
+    
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let college = colleges[sourceIndexPath.row]
         colleges.removeAtIndex(sourceIndexPath.row)
         colleges.insert(college, atIndex: destinationIndexPath.row)
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row

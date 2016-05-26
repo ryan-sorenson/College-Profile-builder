@@ -173,7 +173,18 @@
                     <view key="view" contentMode="scaleToFill" id="M1O-rD-M9I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-Gm-Jqx">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="J7q-Gm-Jqx" secondAttribute="trailing" constant="-20" id="4u7-tO-BhZ"/>
+                            <constraint firstItem="J7q-Gm-Jqx" firstAttribute="top" secondItem="uf0-ZZ-set" secondAttribute="bottom" id="9Rz-8h-SVD"/>
+                            <constraint firstItem="J7q-Gm-Jqx" firstAttribute="leading" secondItem="M1O-rD-M9I" secondAttribute="leadingMargin" constant="-20" id="Wm3-77-YFw"/>
+                            <constraint firstItem="mgz-FJ-3Xc" firstAttribute="top" secondItem="J7q-Gm-Jqx" secondAttribute="bottom" id="l82-OF-JIK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56X-x1-eHH" userLabel="First Responder" sceneMemberID="firstResponder"/>

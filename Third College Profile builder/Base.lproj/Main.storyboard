@@ -127,6 +127,13 @@
                                     <action selector="onCameraTapped:" destination="rqb-0z-3km" eventType="touchUpInside" id="PAD-5w-5OY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgZ-2O-MWt">
+                                <rect key="frame" x="411" y="144" width="30" height="30"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="wzz-JA-U6A" kind="show" id="6a7-ep-lOA"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAt-hR-ffi">
                                 <rect key="frame" x="235" y="184" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -154,6 +161,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6L-Ku-bnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1747" y="-358"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="HmN-AB-zXr">
+            <objects>
+                <viewController id="wzz-JA-U6A" customClass="MapViewController" customModule="Third_College_Profile_builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uf0-ZZ-set"/>
+                        <viewControllerLayoutGuide type="bottom" id="mgz-FJ-3Xc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M1O-rD-M9I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56X-x1-eHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416" y="-358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pdZ-Yh-Tto">

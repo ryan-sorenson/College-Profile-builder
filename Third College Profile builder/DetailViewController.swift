@@ -63,4 +63,7 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
             presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
+    @IBAction func onScreenTapped(sender: AnyObject) {
+        urlTextField.resignFirstResponder()
+    }
 }

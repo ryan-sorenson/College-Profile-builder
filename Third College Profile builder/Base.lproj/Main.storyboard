@@ -141,6 +141,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vEz-Uj-ExT" firstAttribute="centerX" secondItem="HHZ-w8-bzH" secondAttribute="centerX" id="7tr-jS-tAf"/>
                             <constraint firstItem="peD-xl-N1f" firstAttribute="centerX" secondItem="HHZ-w8-bzH" secondAttribute="centerX" id="AM6-PX-goS"/>
@@ -149,6 +150,9 @@
                             <constraint firstItem="1mi-du-UZw" firstAttribute="centerX" secondItem="HHZ-w8-bzH" secondAttribute="centerX" id="ORy-du-1Op"/>
                             <constraint firstItem="VAt-hR-ffi" firstAttribute="centerX" secondItem="HHZ-w8-bzH" secondAttribute="centerX" id="uN8-Iw-4KK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RDe-Nu-GO2" appends="YES" id="hzz-ED-RHB"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="collegeTextField" destination="vEz-Uj-ExT" id="dlR-uI-hgs"/>
@@ -159,6 +163,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6L-Ku-bnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RDe-Nu-GO2">
+                    <connections>
+                        <action selector="onScreenTapped:" destination="rqb-0z-3km" id="Piy-Ox-7J8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1747" y="-358"/>
         </scene>

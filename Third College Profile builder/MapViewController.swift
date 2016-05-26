@@ -8,8 +8,10 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController, UITextFieldDelegate {
+class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
 
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var mapView: MKMapView!
@@ -19,8 +21,24 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     var map = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         textView.delegate = self
 
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            if location.horizontalAccuracy < 1000 &&
+                location.verticalAccuracy < 1000 {
+                    let center = location.coordinate
+                    let span = MKCoordinateSpanMake(0.01, 0.01)
+                    let region = MKCoordinateRegionMake(center, span)
+                    self.mapView.setRegion(region, animated: true)
+                    locationManager.startUpdatingLocation()
+            }
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

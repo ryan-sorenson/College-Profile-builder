@@ -177,15 +177,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-Gm-Jqx">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocr-Dd-vq1">
+                                <rect key="frame" x="203" y="91" width="195" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="J7q-Gm-Jqx" secondAttribute="trailing" constant="-20" id="4u7-tO-BhZ"/>
                             <constraint firstItem="J7q-Gm-Jqx" firstAttribute="top" secondItem="uf0-ZZ-set" secondAttribute="bottom" id="9Rz-8h-SVD"/>
+                            <constraint firstItem="ocr-Dd-vq1" firstAttribute="centerX" secondItem="M1O-rD-M9I" secondAttribute="centerX" id="VFp-Ns-bja"/>
                             <constraint firstItem="J7q-Gm-Jqx" firstAttribute="leading" secondItem="M1O-rD-M9I" secondAttribute="leadingMargin" constant="-20" id="Wm3-77-YFw"/>
                             <constraint firstItem="mgz-FJ-3Xc" firstAttribute="top" secondItem="J7q-Gm-Jqx" secondAttribute="bottom" id="l82-OF-JIK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="J7q-Gm-Jqx" id="RHb-SV-3RO"/>
+                        <outlet property="textView" destination="ocr-Dd-vq1" id="4pN-RN-Gpl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56X-x1-eHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
